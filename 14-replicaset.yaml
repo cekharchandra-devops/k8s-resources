@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: nginx-rs
+  labels:
+    project: digital
+    environment: dev
+    tier: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      project: digital
+      environment: dev
+      tier: frontend
+  template:
+    metadata:
+      name: nginx-rs
+      labels:
+        project: digital
+        environment: dev
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx-rs
+          image: nginx
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc
+spec:
+  type: LoadBalancer
+  selector:
+    project: digital
+    environment: dev
+    tier: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32007
