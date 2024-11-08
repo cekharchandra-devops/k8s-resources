@@ -13,10 +13,10 @@ spec:
         - name: course
           valueFrom:
             configMapKeyRef:
-              key: cm-util
+              key: cm
               name: course
         - name: duration
           valueFrom:
             configMapKeyRef:
-              key: cm-util
+              key: cm
               name: duration
