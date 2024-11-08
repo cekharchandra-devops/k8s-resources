@@ -9,6 +9,7 @@ metadata:
 spec:
   containers:
     - name: labels
-      image: nginx
+      image: almalinux:9
+      command: ["sleep", "300"]
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1d
