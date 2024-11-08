@@ -1,19 +1,19 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: svc-util
+  name: svc-np
   labels:
     environment: dev
     project: digital
 spec:
   containers:
-    - name: svc-util
+    - name: svc-np
       image: nginx
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: svc-util
+  name: svc-np
 spec:
   type: NodePort
   selector:
