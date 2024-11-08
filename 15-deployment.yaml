@@ -18,8 +18,8 @@ spec:
       name: nginx-dplymnt
       labels:
         project: digital
-      environment: dev
-      app: frontend
+        environment: dev
+        app: frontend
     spec:
       containers:
         - name: nginx-dplymnt
