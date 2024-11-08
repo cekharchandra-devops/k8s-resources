@@ -17,3 +17,5 @@ spec:
           cpu: 120m
           memory: 120Mi
       args: ["--vm", "1", "--vm-bytes", "250M", "--vm-hang", "1"]
+
+# the requested --vm-bytes is bigger than the resources we configured . resulted in CrashLoopBackOff
